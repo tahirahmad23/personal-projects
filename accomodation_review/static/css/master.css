@@ -1,10 +1,23 @@
 
-#backgroundcarousel img {
-    height: 400px;
+#headercarousel img {
+    height: 500px;
     object-fit: cover;
     opacity: 0.8;
 
     }
+#feedbackcarousel img{
+  height: 500px;
+  object-fit: cover;
+  opacity: 0.3;
+}
+.header{
+  position: relative;
+}
+.header a{
+  position: absolute;
+  top: 500px;
+  right: 70px;
+}
 #houseimages img{
   height: 600px;
   object-fit: cover;
@@ -41,10 +54,7 @@
   margin: 5px;
 }
 
-.carousel{
-    margin-top: 3px;
-    margin-bottom: 50px;
-}
+
 .centeredcontent{
 
   display: flex;
@@ -85,7 +95,11 @@
 .housedescription{
   margin-top: 50px;
 }
-.carousel-caption{
+.serviceoverview{
   text-align: left;
   padding-bottom: 50px;
+}
+.studentfeedback{
+  text-align: left;
+  color: black;
 }
