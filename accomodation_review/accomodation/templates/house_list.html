@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="houselist row">
+  {% for house in house_list %}
+  <div class="col-md-6">
+    <div class="listoverview bg-light">
+      <a href="{% url 'accomodation:house_detail' pk=house.pk %}">
+      <img src="{{media}}{{house.images.all.0.image}}" alt="">
+      <div class="text row">
+        <h3 class="col-6">{{house.name}}</h3>
+        <p class="col-6">{{house.price}}</p>
+        <p class="col-6">{{house.address}}<p>
+      </div>
+      </a>
+
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

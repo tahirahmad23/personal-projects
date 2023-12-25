@@ -1,0 +1,91 @@
+
+#backgroundcarousel img {
+    height: 400px;
+    object-fit: cover;
+    opacity: 0.8;
+
+    }
+#houseimages img{
+  height: 600px;
+  object-fit: cover;
+  border-radius: 1%;
+}
+.carousel-control-prev,.carousel-control-next{
+  width: 60px;
+}
+.carousel-control-prev-icon,.carousel-control-next-icon{
+  background-color: lightgrey;
+  width: 80%;
+  height: 45px;
+  border-radius: 50%;
+}
+.footer{
+    margin-top: 150px;
+    padding-top: 50px;
+    height: 300px;
+}
+.listoverview{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3%;
+  box-shadow: 3px 3px 10px darkgrey;
+}
+
+.listoverview img{
+  width: 100%;
+  border-top-left-radius: 3%;
+  border-top-right-radius:3%;
+}
+.listoverview .text{
+  margin: 5px;
+}
+
+.carousel{
+    margin-top: 3px;
+    margin-bottom: 50px;
+}
+.centeredcontent{
+
+  display: flex;
+  justify-content: center;
+}
+
+.aboutfooter{
+  margin-right: 200px;
+}
+.housedetail{
+  margin-top: 100px;
+}
+.signupform,.loginform,.moreinfo{
+  margin-top: 200px;
+}
+.usernameinput,.emailinput,.passwordinput,.departmentinput{
+  margin-top: 30px;
+  width: 400px;
+  border: none;
+  border-bottom: 1px solid green;
+  border-radius: 0%;
+}
+.houselist{
+  margin-top: 100px;
+}
+.ratinginput{
+  margin-top: 30px;
+  width: 200px;
+}
+.commentinput{
+  margin-top: 10px;
+  width: 500px;
+  height: 50px;
+}
+.submitform{
+  margin-top: 30px;
+}
+.housedescription{
+  margin-top: 50px;
+}
+.carousel-caption{
+  text-align: left;
+  padding-bottom: 50px;
+}

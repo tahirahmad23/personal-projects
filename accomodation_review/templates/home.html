@@ -1,0 +1,72 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block content %}
+<div class="container header">
+    <h1 style="margin:50px 0px 50px 0px" class="fs-1">Find Your Perfect Campus Home</h1>
+    <div  id="backgroundcarousel"class="carousel slide" data-bs-ride="carousel">
+
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#backgroundcarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#backgroundcarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#backgroundcarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#backgroundcarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="{% static 'sliderimages/acc1.jpg'%}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-2">Thorough evaluations of nearby accommodations.</h5>
+            <ul class="fs-4">
+              <p></p>
+              <p></p>
+              <li>Detailed assessments of location, amenities, pricing, and community.</li>
+              <li>In-depth reviews to aid decision-making.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{% static 'sliderimages/acc2.jpg'%}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-2">Supporting students in navigating housing options.</h5>
+            <ul class="fs-4">
+              <p></p>
+              <p></p>
+              <li>Advice, tips, and resources for decision-making.</li>
+              <li>Assistance in simplifying the housing selection process.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{% static 'sliderimages/acc3.jpg'%}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-2">Easy access and navigation of reviews and resources.</h5>
+            <ul class="fs-4">
+              <p></p>
+              <p></p>
+              <li>Intuitive website design for user convenience.</li>
+              <li>Seamless access to comprehensive housing information.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{% static 'sliderimages/acc4.jpg'%}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-2">Backed by Fattah Real Estate Investment</h5>
+            <ul class="fs-4">
+              <p></p>
+              <p></p>
+              <li>Possible exclusive deals or insights into accommodations.</li>
+              <li>Affiliation with trusted property management companies.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a style="margin-left:80%"class="btn btn-lg btn-success"href="{% url 'accomodation:house_list'%}">Explore accomodations</a>
+    </div>
+
+
+
+{% endblock %}
