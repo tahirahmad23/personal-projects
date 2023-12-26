@@ -1,16 +1,18 @@
+$(document).ready(function(){
+  // On document load, check window width and toggle caption visibility
+  checkWidth();
 
-swap();
+  // On window resize, check and toggle caption visibility
+  $(window).resize(function(){
+    checkWidth();
+  });
 
-function swap() {
-  let slides = document.getElementsByClassName("mySlides");
-  let currentslide = document.getElementsByClassName("mySlides active")[0];
-  var index = Array.from(slides).indexOf(currentslide)
-  currentslide.className = currentslide.className.replace(" active", "");
-  if (slides[index+1]=== undefined) {
-    slides[0].className += " active"
+  // Function to toggle caption visibility based on window width
+  function checkWidth(){
+    if($(window).width() < 576){
+      $('.carousel-caption').css('display', 'block');
+    } else {
+      $('.carousel-caption').css('display', '');
+    }
   }
-  else {
-    slides[index +1].className += " active"
-  }
-  setTimeout(swap, 5000);
-}
+});
