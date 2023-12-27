@@ -1,5 +1,5 @@
 from django.db.models import Q
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404,redirect
 from django.urls import reverse_lazy
 from .models import House,Photo,Review
 from accounts.models import UserAccount
@@ -43,7 +43,7 @@ class UpdateHouse(SuperuserOnlyMixin,UpdateView):
     def get_success_url(self):
         return reverse_lazy("accomodation:house_detail",kwargs={"pk":self.kwargs.get("pk")})
 
-class HouseList(LoginRequiredMixin,ListView):
+class HouseList(ListView):
     model = House
     template_name = "house_list.html"
 
@@ -52,7 +52,8 @@ class HouseList(LoginRequiredMixin,ListView):
         context["media"] = settings.MEDIA_URL
         return context
 
-class HouseDetail(LoginRequiredMixin,FormMixin,DetailView):
+
+class HouseDetail(FormMixin,DetailView):
     model = House
     template_name = "house_detail.html"
     form_class = ReviewForm
@@ -64,16 +65,20 @@ class HouseDetail(LoginRequiredMixin,FormMixin,DetailView):
         return context
 
     def post(self,request,*args,**kwargs):
-        self.object = self.get_object()
-        form = self.get_form()
-        if form.is_valid():
-            review = form.save(commit=False)
-            review.house = self.object
-            review.user = get_object_or_404(UserAccount,user=self.request.user)
-            review.save()
-            return self.form_valid(form)
+        if request.user.is_authenticated:
+            form = self.get_form()
+            self.object = self.get_object()
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.house = self.object
+                review.user = get_object_or_404(UserAccount,user=self.request.user)
+                review.save()
+                return self.form_valid(form)
+            else:
+                return self.form_invalid(form)
         else:
-            return self.form_invalid(form)
+            return redirect(self.request.path)
+
     def get_success_url(self):
         return self.request.path
 class DeleteHouse(SuperuserOnlyMixin,DeleteView):

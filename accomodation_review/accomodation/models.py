@@ -5,9 +5,15 @@ from accounts.models import UserAccount
 class House(models.Model):
     name = models.CharField(blank=True,max_length=255,unique=True)
     address = models.CharField(max_length=255,unique=True)
-    room_size = models.DecimalField(max_digits=10,decimal_places=2)
-    number_of_rooms = models.IntegerField()
-    price = models.IntegerField()
+    price = models.CharField(max_length=255)
+    room_size = models.CharField(max_length=255)
+    number_of_rooms = models.CharField(max_length=255)
+    electricity = models.CharField(max_length=255)
+    backup_gen = models.CharField(max_length=255,choices=[("Yes","Yes"),("NO","No")])
+    runing_water = models.CharField(max_length=255,choices=[("Yes","Yes"),("NO","No")])
+    air_conditioning = models.CharField(max_length=255,choices=[("Yes","Yes"),("NO","No")])
+    distance = models.CharField(max_length=255)
+    security_guards = models.CharField(max_length=255,choices=[("Yes","Yes"),("NO","No")])
     description = models.TextField()
     last_updated = models.DateTimeField(auto_now=True)
 

@@ -19,10 +19,10 @@
           <div class="navbar-nav">
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             <a class="nav-link" href="{% url 'about_us'%}">About Us</a>
+            <a class="nav-link" href="{% url 'accomodation:house_list'%}">Listings</a>
           </div>
           {% if user.is_authenticated %}
           <div class="navbar-nav">
-            <a class="nav-link" href="{% url 'accomodation:house_list'%}">Listings</a>
             {% if user.is_superuser %}
             <a class="nav-link" href="{% url 'accomodation:create_house' %}">New_house</a>
             {% endif %}
@@ -35,18 +35,18 @@
           </div>
           {% endif %}
         </div>
-        {% if user.is_authenticated %}
+
         <div class="navbar-nav ms-auto">
           <form  class="d-flex" method="GET" action="{% url 'accomodation:search_house' %}">
             {{ form.q }}
             <input type="submit" name="" value="Search">
           </form>
         </div>
-        {% endif %}
+        
       </div>
     </nav>
 
-        
+
 
         <div class="container">
         {% if houses %}
@@ -75,8 +75,8 @@
               <ul>
                 <li><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
                 <li><a class="nav-link" href="{% url 'about_us'%}">About Us</a></li>
+                <li><a class="nav-link" href="{% url 'accomodation:house_list'%}">Listings</a></li>
                 {% if user.is_authenticated %}
-                  <li><a class="nav-link" href="{% url 'accomodation:house_list'%}">Listings</a></li>
                   {% if user.is_superuser %}
                   <li><a class="nav-link" href="{% url 'accomodation:create_house' %}">New_house</a></li>
                   {% endif %}

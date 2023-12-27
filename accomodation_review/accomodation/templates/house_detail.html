@@ -44,14 +44,21 @@
 </div>
 <div class="textpartdetail row">
   <h1 class="fs-3">Overview</h1>
+  <small>Last updated : {{house.last_updated}}</small>
   <p></p>
-  <div class="col-6 fs-5">
-    <div>address : {{house.address}}</div>
-    <div>number of rooms : {{house.number_of_rooms}}</div>
+  <div class="fs-4 col-md-4"><p>Price : {{house.price}}NGN per year</p></div>
+  <div class="col-md-4 fs-5">
+    <div><p>Address : {{house.address}}</p></div>
+    <div><p>Number of rooms : {{house.number_of_rooms}}</p></div>
+    <div><p>Room size : {{house.room_size}}m² bathroom included</p></div>
+    <div><p>Electricity: Average of {{house.electricity}} hours a day</p></div>
+    <div><p>Distance : {{house.distance}}m from campus</p></div>
   </div>
-  <div class="col-6 fs-5">
-    <div>room size : {{house.room_size}}</div>
-    <div>price : {{house.price}}</div>
+  <div class="col-md-4 fs-5">
+    <div><p>Air conditioning : {{house.air_conditioning}}</p></div>
+    <div><p>Back up generator : {{house.backup_gen}}</p></div>
+    <div><p>Running water : {{house.runing_water}}</p></div>
+    <div><p>Security guards : {{house.security_guards}}</p></div>
   </div>
   <div class="housedescription">
     <h2 class="fs-4">description :</h2>
@@ -67,11 +74,25 @@
     {{ review.user }}--{{ review.rating }}</p>
     <p class="fs-5">{{ review.comment|linebreaks  }}</p>
     {% endfor %}
+
+
+  {% if user.is_authenticated %}
     <form method="post">{% csrf_token %}
       <div class="">{{ review_form.rating }}</div>
       <div class="">{{ review_form.comment}}</div>
       <input type="submit" class = "btn btn-success submitform"name="" value="add comment">
     </form>
+      {% if review_form.errors %}
+      <div class="error">
+        <p>Please correct the errors below:</p>
+        {{ review_form.errors }}
+      </div>
+      {% endif %}
+    {% else %}
+    <p></p>
+    <p>please login to write a comment review</p>
+    <a class="btn btn-sm btn-success" href="{% url 'accounts:login' %}">Login</a>
+    {% endif %}
 
   </div>
 
