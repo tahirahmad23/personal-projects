@@ -5,9 +5,38 @@
     opacity: 0.8;
 
     }
-@media only screen and (max-width: 600px) {
-  
-}
+
+
+@media (max-width: 768px) {
+      /* Mobile */
+      body {
+        font-size: 20px;
+      }
+      h1 {
+        font-size: 34px;
+      }
+    }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+      /* Tablet */
+      body {
+        font-size: 20px;
+      }
+      h1 {
+        font-size: 36px;
+      }
+    }
+@media (min-width: 1025px) {
+      /* Desktop */
+      body {
+        font-size: 18px;
+      }
+      h1 {
+        font-size: 30px;
+      }
+    }
+
+
 #feedbackcarousel img{
   height: 500px;
   object-fit: cover;
