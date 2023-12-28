@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="housedetail w-100">
+  <h1 class="fs-1">{{ house.name }}</h1>
+  {% if user.is_superuser %}
+  <a href="{% url 'accomodation:update_house' pk=house.pk %}">edit</a>
+  <a href="{% url 'accomodation:delete_house' pk=house.pk %}">delete</a>
+  {% endif %}
+<div  id="houseimages"class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
+
+  <div class="carousel-indicators">
+    {% for photo in house.images.all %}
+      {% if forloop.counter0 == 0 %}
+        <button type="button" data-bs-target="#houseimages" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      {% else %}
+        <button type="button" data-bs-target="#houseimages" data-bs-slide-to="{{ forloop.counter0 }}" aria-label="Slide {{ forloop.counter }}"></button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="carousel-inner">
+    {% for photo in house.images.all %}
+      {% if forloop.counter0 == 0 %}
+      <div class="carousel-item active">
+        <img src="{{media}}{{photo.image}}" class="d-block w-100" alt="...">
+      </div>
+      {% else %}
+      <div class="carousel-item">
+        <img src="{{media}}{{photo.image}}" class="d-block w-100" alt="...">
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#houseimages" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#houseimages" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="textpartdetail row">
+  <h1 class="fs-3">Overview</h1>
+  <small>Last updated : {{house.last_updated}}</small>
+  <p></p>
+  <div class="fs-4 col-md-4"><p>Price : {{house.price}}NGN per year</p></div>
+  <div class="col-md-4 fs-5">
+    <div><p>Address : {{house.address}}</p></div>
+    <div><p>Number of rooms : {{house.number_of_rooms}}</p></div>
+    <div><p>Room size : {{house.room_size}}m² bathroom included</p></div>
+    <div><p>Electricity: Average of {{house.electricity}} hours a day</p></div>
+    <div><p>Distance : {{house.distance}}m from campus</p></div>
+  </div>
+  <div class="col-md-4 fs-5">
+    <div><p>Air conditioning : {{house.air_conditioning}}</p></div>
+    <div><p>Back up generator : {{house.backup_gen}}</p></div>
+    <div><p>Running water : {{house.runing_water}}</p></div>
+    <div><p>Security guards : {{house.security_guards}}</p></div>
+  </div>
+  <div class="housedescription">
+    <h2 class="fs-4">description :</h2>
+    <p></p>
+    <div class="fs-5">{{house.description|linebreaks}}</div>
+  </div>
+  </div>
+<div class="reviews">
+  <h3 class="fs-4">Reviews:</h3>
+  {% for review in house.reviews.all %}
+  <p class="fs-6">
+    <!-- <img src="{{media}}{{review.user.profile_pic}}" alt=""> -->
+    {{ review.user }}--{{ review.rating }}</p>
+    <p class="fs-5">{{ review.comment|linebreaks  }}</p>
+    {% endfor %}
+
+
+  {% if user.is_authenticated %}
+    <form method="post">{% csrf_token %}
+      <div class="">{{ review_form.rating }}</div>
+      <div class="">{{ review_form.comment}}</div>
+      <input type="submit" class = "btn btn-success submitform"name="" value="add comment">
+    </form>
+      {% if review_form.errors %}
+      <div class="error">
+        <p>Please correct the errors below:</p>
+        {{ review_form.errors }}
+      </div>
+      {% endif %}
+    {% else %}
+    <p></p>
+    <p>please login to write a comment review</p>
+    <a class="btn btn-sm btn-success" href="{% url 'accounts:login' %}">Login</a>
+    {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block content %}
+<div class="container header">
+    <h1 style="margin:50px 0px 50px 0px" class="fs-1">Find Your Perfect Campus Home</h1>
+    <div  id="headercarousel"class="carousel slide" data-bs-ride="carousel">
+
+
+      <div class="carousel-indicators">
+
+        <button type="button" data-bs-target="#headercarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#headercarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#headercarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#headercarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="{% static 'sliderimages/acc1.jpg'%}" class="d-block w-100" alt="...">
+          <div class="carousel-caption serviceoverview">
+            <h5 class="fs-2">Thorough evaluations of nearby accommodations.</h5>
+            <ul class="fs-4">
+              <p></p>
+              <p></p>
+              <li>Detailed assessments of location, amenities, pricing, and community.</li>
+              <li>In-depth reviews to aid decision-making.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{% static 'sliderimages/acc2.jpg'%}" class="d-block w-100" alt="...">
+          <div class="carousel-caption serviceoverview">
+            <h5 class="fs-2">Supporting students in navigating housing options.</h5>
+            <ul class="fs-4">
+              <p></p>
+              <p></p>
+              <li>Advice, tips, and resources for decision-making.</li>
+              <li>Assistance in simplifying the housing selection process.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{% static 'sliderimages/acc3.jpg'%}" class="d-block w-100" alt="...">
+          <div class="carousel-caption serviceoverview">
+            <h5 class="fs-2">Easy access and navigation of reviews and resources.</h5>
+            <ul class="fs-4">
+              <p></p>
+              <p></p>
+              <li>Intuitive website design for user convenience.</li>
+              <li>Seamless access to comprehensive housing information.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{% static 'sliderimages/acc4.jpg'%}" class="d-block w-100" alt="...">
+          <div class="carousel-caption  serviceoverview">
+            <h5 class="fs-2">Backed by Fattah Real Estate Investment</h5>
+            <ul class="fs-4">
+              <p></p>
+              <p></p>
+              <li>Possible exclusive deals or insights into accommodations.</li>
+              <li>Affiliation with trusted property management companies.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="btn btn-lg btn-success" href="{% url 'accomodation:house_list'%}">Explore accomodations</a>
+    </div>
+
+    <div class="container feedback">
+      <div  id="feedbackcarousel"class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="{% static 'sliderimages/white.jpg'%}" class="d-block w-100" alt="...">
+            <div class="carousel-caption studentfeedback ">
+              <h1>Student feedback section</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="10000">
+            <img src="{% static 'sliderimages/white.jpg'%}" class="d-block w-100" alt="...">
+            <div class="carousel-caption studentfeedback ">
+              <h1>Student feedback section</h1>
+              <p>in reprehenderit in voluptate velit esse cillum dolor sunt in culpa qui officia deserunt mollit anim id est laborum.
+              e eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="10000">
+            <img src="{% static 'sliderimages/white.jpg'%}" class="d-block w-100" alt="...">
+            <div class="carousel-caption studentfeedback ">
+              <h1>Student feedback section</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
+
+              </div>
+            </div>
+          <div class="carousel-item" data-bs-interval="10000">
+            <img src="{% static 'sliderimages/white.jpg'%}" class="d-block w-100" alt="...">
+            <div class="carousel-caption studentfeedback ">
+              <h1>Student feedback section</h1>
+              <p>in reprehenderit in voluptate velit esse cillum dolor sunt in culpa qui officia deserunt mollit anim id est laborum.
+              e eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#feedbackcarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#feedbackcarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="homeaboutus">
+        <h3>About Us:</h3>
+        <p>At Fattah Campus Accommodation Review, we are committed to simplifying the often overwhelming process of finding the perfect
+        housing for university life. Sponsored by Fattah Real Estate Investment, our platform offers comprehensive reviews and
+        guidance, ensuring that students have access to detailed evaluations of various accommodations near their campuses.</p>
+        <a class="btn btn-success" href="{% url 'about_us'%}">Learn more</a>
+      </div>
+    </div>
+{% endblock %}

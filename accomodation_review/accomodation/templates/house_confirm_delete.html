@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="centeredcontent">
+  <form enctype="multipart/form-data" method="post">{%csrf_token%}
+    <p>Are you sure you want to permanently delete this listing and all its review?</p>
+    <input type="submit" class="btn btn-danger" value="delete">
+  </form>
+
+</div>
+{% endblock %}
