@@ -24,7 +24,7 @@
     {% for photo in house.images.all %}
       {% if forloop.counter0 == 0 %}
       <div class="carousel-item active">
-        <img src="{{media}}{{photo.image}}" class="d-block w-100" alt="...">
+        <img src="{{media}}{{photo.image}}" class="d-block w-100" alt="{{media}}{{photo.image}}">
       </div>
       {% else %}
       <div class="carousel-item">
