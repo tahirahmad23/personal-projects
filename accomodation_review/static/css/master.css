@@ -3,38 +3,22 @@
     height: 500px;
     object-fit: cover;
     opacity: 0.8;
-
-    }
-
+}
 
 @media (max-width: 768px) {
-      /* Mobile */
-      body {
-        font-size: 20px;
-      }
-      h1 {
-        font-size: 34px;
-      }
-    }
+  #houseimages img{
+    height: 400px !important;
+    opacity: 1;
+    object-fit: cover;
+  }
+  body {
+   font-size: 18px;
+ }
+ h1 {
+   font-size: 32px;
+ }
+}
 
-@media (min-width: 769px) and (max-width: 1024px) {
-      /* Tablet */
-      body {
-        font-size: 20px;
-      }
-      h1 {
-        font-size: 36px;
-      }
-    }
-@media (min-width: 1025px) {
-      /* Desktop */
-      body {
-        font-size: 18px;
-      }
-      h1 {
-        font-size: 30px;
-      }
-    }
 
 
 #feedbackcarousel img{
@@ -67,7 +51,7 @@
 .footer{
     margin-top: 150px;
     padding-top: 50px;
-    height: 300px;
+
 }
 .listoverview{
   width: 70%;
