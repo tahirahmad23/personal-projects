@@ -1,0 +1,115 @@
+body{
+  color: #e9eef5;
+  background-color: #242d36;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-brand{
+  color: #e9eef5;
+  font-size: 22px;
+  font-weight: bold;
+  background: #242d36;
+  transition: background 1s;
+  padding: 0px 10px 0px 10px;
+}
+.navbar-brand:hover, .nav-link:hover{
+  color: #242d36;
+  background-color: #e9eef5;
+  border-radius: 7%;
+  opacity: 0.8
+}
+.nav-link{
+  font-weight: bold;
+  font-size: 18px;
+  color: #e9eef5;
+  margin-left: 20px;
+  background: #242d36;
+  transition: background 1s;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.current{
+  color:#242d36;
+  background: #e9eef5;
+  border-radius: 7%;
+  opacity: 0.8
+}
+a,a:hover{
+  color: #e9eef5;
+}
+.social{
+  margin-top: 50px;
+  margin-left: 75%
+
+}
+.contacticon{
+  margin-left: 40px;
+  font-size: 25px;
+}
+.content{
+  font-family: montse
+  padding: 70px;
+  margin-top: 100px
+}
+.intropunch{
+  text-align: center;
+
+  font-size: 1.6em;
+}
+
+.intro{
+  padding-top: 30px;
+  text-align: center;
+  font-size: 1.4em;
+}
+hr{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.projects{
+  text-align: center;
+}
+
+.card{
+  margin-top: 70px;
+  max-width: 500px;
+  color: #242d36;
+  font-size: 2em;
+  font-weight: bold;
+}
+.visitweb{
+  margin-top: 50px;
+  border-radius: 7%
+}
+.card-img-overlay{
+  padding-top: 70px;
+}
+
+.contactinfo{
+  text-align: center;
+  max-width: 70%;
+  font-size: 1.6em;
+}
+.cl{
+  text-align: left;
+  font-weight:
+
+}
+@media screen and (max-width: 767px) {
+  /* Your mobile-specific CSS rules go here */
+  body{
+    padding: 0px;
+  }
+  .intropunch{
+    padding: 20px;
+    font-size: 1.4em;
+  }
+  .intro{
+    padding: 20px;
+  }
+  .contactinfo{
+    max-width: 90%;
+    font-size: 1.4em;
+  }
+}
