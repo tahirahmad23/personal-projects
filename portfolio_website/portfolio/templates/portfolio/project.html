@@ -1,0 +1,7 @@
+{% extends "portfolio/base.html" %}
+{% block content %}
+{% load static %}
+    <h1>{{project.title}}</h1>
+    <p>{{project.content|safe}}</p>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "portfolio/base.html" %}
+{% block content %}
+{% load static %}
+{%for project in project_list%}
+    <p>{{project.pk}}</p>
+    <a href="{% url 'portfolio:project' pk=project.pk %}">{{project}}</a>
+{% endfor %}
+
+{% endblock %}
