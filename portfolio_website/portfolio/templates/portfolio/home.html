@@ -1,6 +1,83 @@
 {% extends "portfolio/base.html" %}
 {% block content %}
 {% load static %}
+<div class="container my-5">
+    
+    <!-- Hero Section -->
+    <div id="aboutme" class="row align-items-center text-center text-md-start">
+        <!-- Profile Image -->
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/300" alt="Profile Picture" class="img-fluid rounded-circle shadow">
+        </div>
+        <!-- Bio Section -->
+        <div class="col-md-8">
+            <h1 class="about-title">Hi, I'm Ahmad Tahir</h1>
+            <p class="about-text">
+                I'm a dedicated Data Analyst with a strong passion for uncovering insights and solving complex problems through data. 
+                Proficient in Python, backend web development, and advanced analytical techniques, 
+                I thrive on transforming raw data into actionable intelligence. 
+                As a Computer Engineering student with a CGPA of 4.0+, 
+                I bring academic excellence and technical expertise to every project. When I'm not analyzing data, 
+                I enjoy delving into economics and business trends to expand my perspective and drive meaningful impact.
+            </p>
+            <a href="#contact" class="btn btn-primary contact-btn">Contact Me</a>
+        </div>
+    </div>
 
+    <!-- Stylish Divider -->
+    <div class="stylish-divider my-5"></div>
+
+    <!-- Skills Section -->
+    <div id="skills" class="row text-center d-flex align-items-stretch">
+    <h2 class="section-title">My Skills</h2>
+    <div class="col-md-4 d-flex py-3">
+        <div class="skill-card shadow">
+            <h3 class="skill-title">Data Analysis</h3>
+            <p class="skill-description">Transforming raw data into meaningful insights using Python, Pandas, and visualization tools.</p>
+        </div>
+    </div>
+    <div class="col-md-4 d-flex py-3">
+        <div class="skill-card shadow">
+        <h3 class="skill-title">Python Programming</h3>
+        <p class="skill-description">Expert in Python for scripting, automation, and software development.</p>
+        </div>
+    </div>
+    <div class="col-md-4 d-flex py-3">
+        <div class="skill-card shadow">
+            <h3 class="skill-title">Backend Development</h3>
+            <p class="skill-description">Building robust, scalable server-side applications with Flask and Django.</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Stylish Divider -->
+    <div class="stylish-divider my-5"></div>
+
+    
+    <div id="projects" class="text-center py-5">
+        <h2 class="section-title py-3">Check Out My Recent Projects:</h2>
+        <!-- Card Column-->
+        <div class="row">
+            {% for project in project_list %}
+            <div class="col-md-6">
+                <div class="article-card">
+                  <a href="{% url 'portfolio:project' pk=project.pk %}">
+                    <div class="article-image-container">
+                      <img src="/media/{{ project.cover_image }}" alt="Project Image" class="article-image">
+                    </div>
+                    <h3 class="article-card-title">{{ project.title }}</h3>
+                  </a>
+                </div>
+              </div>
+
+
+              
+            {% endfor %}
+        </div>
+       
+    </div>
+    
+</div>
 
 {% endblock %}

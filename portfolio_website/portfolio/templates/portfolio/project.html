@@ -1,7 +1,11 @@
 {% extends "portfolio/base.html" %}
 {% block content %}
 {% load static %}
-    <h1>{{project.title}}</h1>
-    <p>{{project.content|safe}}</p>
+<div class="article-container container my-5 py-5">
+    <h1 class="article-title">{{ project.title }}</h1>
+    <div class="article-content">
+      {{ project.content|safe }}
+    </div>
+  </div>
 
 {% endblock %}

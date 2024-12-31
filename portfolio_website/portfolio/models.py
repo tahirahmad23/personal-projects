@@ -5,7 +5,9 @@ class Project(models.Model):
     title = models.CharField(max_length=200)
     content = CKEditor5Field(config_name= "extends")  # This enables rich text editing
     created_at = models.DateTimeField(auto_now_add=True)
+    cover_image = models.ImageField(upload_to="images")
 
     def __str__(self):
         return self.title
+    #
     

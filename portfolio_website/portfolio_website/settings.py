@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio',
-    "django_ckeditor_5"
+    "django_ckeditor_5",
+    "django_cleanup",
 ]
 
 MIDDLEWARE = [

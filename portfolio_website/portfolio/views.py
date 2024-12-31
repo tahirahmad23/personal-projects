@@ -5,18 +5,13 @@ from .models import Project
 
 # Create your views here.
 
-class HomePageView(TemplateView):
-    template_name = "portfolio/home.html"
+# class HomePageView(TemplateView):
+#     template_name = "portfolio/home.html"
 
-class AboutPageView(TemplateView):
-    template_name = "portfolio/about.html"
 
-class ContactPageView(TemplateView):
-    template_name = "portfolio/contact.html"
-
-class ProjectListView(ListView):
+class HomePageView(ListView):
     model = Project
-    template_name = "portfolio/project_list.html"
+    template_name = "portfolio/home.html"
 
 class ProjectView(DetailView):
     model = Project
