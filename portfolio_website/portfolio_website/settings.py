@@ -23,7 +23,7 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 SECRET_KEY = 'django-insecure-($p148*0bktm2v-*+^gier696)m2k7aes#m9r8wojj%5gupls4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["ahmad16.pythonanywhere.com"]
 
@@ -157,7 +157,7 @@ customColorPalette = [
         },
     ]
 
-  
+
 CKEDITOR_5_CONFIGS = {
     'default': {
         'toolbar': ['heading', '|', 'bold', 'italic', 'link',
