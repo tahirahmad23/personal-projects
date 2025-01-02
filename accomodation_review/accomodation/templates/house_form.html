@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-<form enctype="multipart/form-data" method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {{ photoform.as_p }}
-  <input type="submit" name="" value="submit">
-</form>
-{% endblock %}
